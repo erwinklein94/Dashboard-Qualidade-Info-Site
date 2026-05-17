@@ -967,6 +967,13 @@
       ].join('\n');
     }
 
+    function setLoadingStatus(message) {
+      const summary = document.getElementById('executiveSummary');
+      if (summary) summary.textContent = message;
+      const status = document.getElementById('generalStatus');
+      if (status) status.textContent = message;
+    }
+
     function toast(message = 'Copiado.') {
       const el = document.getElementById('toast');
       el.textContent = message;
@@ -986,8 +993,22 @@
     function normalizeReport(report) {
       if (!report || typeof report !== 'object') throw new Error('JSON inválido: objeto principal não encontrado.');
       currentReport = report;
-      const rows = safeArray(report.fila_acoes).map((row, index) => enriquecerLinha(row, index));
-      if (!rows.length) throw new Error('JSON inválido: campo fila_acoes vazio ou ausente.');
+
+      // O relatório correto usa fila_acoes, mas alguns arquivos podem vir apenas com grupos.
+      // Este fallback impede que o painel fique zerado quando o JSON tem dados válidos em outra estrutura.
+      let rawRows = safeArray(report.fila_acoes);
+      if (!rawRows.length && report.grupos && typeof report.grupos === 'object') {
+        const vistos = new Set();
+        rawRows = Object.values(report.grupos).flatMap(safeArray).filter((row) => {
+          const key = row?.id || JSON.stringify(row);
+          if (vistos.has(key)) return false;
+          vistos.add(key);
+          return true;
+        });
+      }
+
+      const rows = rawRows.map((row, index) => enriquecerLinha(row, index));
+      if (!rows.length) throw new Error('JSON inválido: não encontrei instituições em fila_acoes nem em grupos.');
       return { ...report, fila_acoes: rows };
     }
 
@@ -1177,21 +1198,40 @@
     }
 
     async function loadDefaultReport() {
+      setLoadingStatus('Carregando relatório...');
+
       const saved = localStorage.getItem('usp-quality-report');
       if (saved) {
-        try { render(JSON.parse(saved)); return; } catch (_) { localStorage.removeItem('usp-quality-report'); }
+        try {
+          const data = JSON.parse(saved);
+          const normalized = normalizeReport(data);
+          if (normalized.fila_acoes.length > 0) {
+            render(data);
+            return;
+          }
+        } catch (err) {
+          console.warn('Relatório salvo no navegador inválido. Vou ignorar e buscar o arquivo do site.', err);
+          localStorage.removeItem('usp-quality-report');
+        }
       }
+
       let lastError;
       for (const url of DEFAULT_REPORT_URLS) {
         try {
           const response = await fetch(url + '?v=' + Date.now(), { cache: 'no-store' });
-          if (!response.ok) throw new Error('HTTP ' + response.status);
+          if (!response.ok) throw new Error('HTTP ' + response.status + ' em ' + url);
           const data = await response.json();
           render(data);
+          console.info('Relatório carregado de:', url);
           return;
-        } catch (err) { lastError = err; }
+        } catch (err) {
+          lastError = err;
+          console.warn('Falha ao tentar carregar:', url, err);
+        }
       }
-      document.getElementById('executiveSummary').textContent = 'Não consegui carregar o relatório automaticamente. Cole o JSON no campo ao lado.';
+
+      document.getElementById('executiveSummary').textContent = 'Não consegui carregar o relatório automaticamente. Cole o JSON no campo ao lado ou confira se data/concursos/_relatorio-qualidade.json existe no repositório do dashboard.';
+      document.getElementById('generalStatus').textContent = 'Falha ao carregar';
       console.warn('Falha ao carregar relatório padrão', lastError);
     }
 
@@ -1248,6 +1288,13 @@
       copyText(text || 'Nenhuma instituição filtrada.');
     });
 
+
+    // Inicialização automática. Sem isso, o painel fica zerado até o usuário apertar um botão.
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadDefaultReport);
+    } else {
+      loadDefaultReport();
+    }
   </script>
 </body>
 </html>
