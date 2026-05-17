@@ -15,21 +15,21 @@
   },
   "resumo": {
     "total": 47,
-    "rodar_qualificado": 5,
-    "revisar": 2,
+    "rodar_qualificado": 28,
+    "revisar": 7,
     "rodar_economico": 0,
-    "ok": 40,
-    "fonte_falhou": 2,
-    "com_rascunho": 1
+    "ok": 12,
+    "fonte_falhou": 26,
+    "com_rascunho": 8
   },
   "fila_acoes": [
     {
-      "id": "pmmg",
-      "sigla": "PMMG",
-      "nome": "Polícia Militar de Minas Gerais",
-      "uf": "MG",
+      "id": "pmesp",
+      "sigla": "PMESP",
+      "nome": "Polícia Militar do Estado de São Paulo",
+      "uf": "SP",
       "prioridade_config": 1,
-      "score": 90,
+      "score": 82,
       "qualidade": "alta",
       "acao": "rodar_qualificado",
       "prioridade_operacional": "alta",
@@ -37,7 +37,7 @@
         "fonte direta falhou ou não trouxe texto suficiente"
       ],
       "workflow_sugerido": {
-        "instituicao": "pmmg",
+        "instituicao": "pmesp",
         "limite": "1",
         "forcar_atualizacao": "true",
         "usar_web_search": "true",
@@ -46,7 +46,119 @@
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
-        "validade"
+        "cotas",
+        "etapas"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "cfsd",
+        "validade",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [
+        "etapas"
+      ],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "prf",
+      "sigla": "PRF",
+      "nome": "Polícia Rodoviária Federal",
+      "uf": "BR",
+      "prioridade_config": 1,
+      "score": 85,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "prf",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "etapas"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "validade",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [
+        "etapas"
+      ],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "pcsp",
+      "sigla": "PCSP",
+      "nome": "Polícia Civil do Estado de São Paulo",
+      "uf": "SP",
+      "prioridade_config": 1,
+      "score": 87,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pcsp",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "cotas",
+        "idade"
       ],
       "campos_concretos": [
         "edital",
@@ -54,7 +166,10 @@
         "vagas",
         "escolaridade",
         "materias",
-        "cfsd",
+        "banca",
+        "inscritos",
+        "etapas",
+        "validade",
         "previsao"
       ],
       "campos_criticos_ruins": [],
@@ -69,7 +184,205 @@
         "usou_openai": false,
         "usou_web_search_openai": false,
         "publicacao_bloqueada": true,
-        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado."
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "pmmg",
+      "sigla": "PMMG",
+      "nome": "Polícia Militar de Minas Gerais",
+      "uf": "MG",
+      "prioridade_config": 1,
+      "score": 87,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pmmg",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "idade",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "pmba",
+      "sigla": "PMBA",
+      "nome": "Polícia Militar da Bahia",
+      "uf": "BA",
+      "prioridade_config": 1,
+      "score": 90,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pmba",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
+        "banca",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "pmerj",
+      "sigla": "PMERJ",
+      "nome": "Polícia Militar do Rio de Janeiro",
+      "uf": "RJ",
+      "prioridade_config": 1,
+      "score": 90,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pmerj",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "pcerj",
+      "sigla": "PCERJ",
+      "nome": "Polícia Civil do Rio de Janeiro",
+      "uf": "RJ",
+      "prioridade_config": 1,
+      "score": 93,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pcerj",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
     },
     {
@@ -78,14 +391,15 @@
       "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
       "uf": "MS",
       "prioridade_config": 2,
-      "score": 64,
+      "score": 43,
       "qualidade": "baixa",
       "acao": "rodar_qualificado",
       "prioridade_operacional": "media",
       "motivos": [
-        "score muito baixo (64)",
-        "campos críticos genéricos: escolaridade, etapas",
-        "muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade"
+        "score muito baixo (43)",
+        "campos críticos genéricos: salario, escolaridade",
+        "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, estagio",
+        "foi publicado por modo qualificado; recomenda revisão visual"
       ],
       "workflow_sugerido": {
         "instituicao": "bmms",
@@ -97,33 +411,97 @@
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
+        "salario",
         "cotas",
+        "idade",
         "escolaridade",
         "materias",
-        "etapas",
         "estagio",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "vagas",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [
+        "salario",
+        "escolaridade"
+      ],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "pmes",
+      "sigla": "PMES",
+      "nome": "Polícia Militar do Espírito Santo",
+      "uf": "ES",
+      "prioridade_config": 2,
+      "score": 69,
+      "qualidade": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "score abaixo do mínimo (69)",
+        "muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pmes",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "cotas",
+        "idade",
+        "materias",
+        "inscritos",
+        "etapas",
         "validade"
       ],
       "campos_concretos": [
         "edital",
         "salario",
         "vagas",
-        "idade",
+        "escolaridade",
         "banca",
-        "cfsd",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [
-        "escolaridade",
         "etapas"
       ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "ppms",
@@ -136,6 +514,7 @@
       "acao": "rodar_qualificado",
       "prioridade_operacional": "media",
       "motivos": [
+        "existe rascunho gerado para revisão",
         "score abaixo do mínimo (70)",
         "campos críticos genéricos: vagas, banca"
       ],
@@ -168,11 +547,75 @@
         "banca"
       ],
       "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 37, campos críticos genéricos: nenhum, campos críticos sem confirmação: vagas, banca."
+      }
+    },
+    {
+      "id": "bmmt",
+      "sigla": "CBMMT",
+      "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+      "uf": "MT",
+      "prioridade_config": 2,
+      "score": 75,
+      "qualidade": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "score abaixo do mínimo (75)"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "bmmt",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "materias",
+        "etapas",
+        "cfsd",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "banca",
+        "inscritos",
+        "estagio",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [
+        "etapas"
+      ],
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "pmsc",
@@ -243,6 +686,7 @@
       "acao": "rodar_qualificado",
       "prioridade_operacional": "media",
       "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
         "score abaixo do mínimo (77)",
         "campos críticos genéricos: vagas, banca"
       ],
@@ -273,101 +717,18 @@
         "vagas",
         "banca"
       ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmes",
-      "sigla": "PMES",
-      "nome": "Polícia Militar do Espírito Santo",
-      "uf": "ES",
-      "prioridade_config": 2,
-      "score": 69,
-      "qualidade": "baixa",
-      "acao": "revisar_ou_rodar_qualificado",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "score abaixo do mínimo (69)",
-        "muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "idade",
-        "materias",
-        "inscritos",
-        "etapas",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "banca",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "bmmt",
-      "sigla": "CBMMT",
-      "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
-      "uf": "MT",
-      "prioridade_config": 2,
-      "score": 75,
-      "qualidade": "baixa",
-      "acao": "revisar_ou_rodar_qualificado",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "score abaixo do mínimo (75)"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "materias",
-        "etapas",
-        "cfsd",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "estagio",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "pcap",
@@ -377,12 +738,18 @@
       "prioridade_config": 2,
       "score": 79,
       "qualidade": "media",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pcap",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -405,144 +772,18 @@
       "campos_criticos_genericos": [
         "etapas"
       ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcms",
-      "sigla": "PCMS",
-      "nome": "Polícia Civil de Mato Grosso do Sul",
-      "uf": "MS",
-      "prioridade_config": 2,
-      "score": 79,
-      "qualidade": "media",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "etapas",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "inscritos",
-        "estagio",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "bmrj",
-      "sigla": "CBMERJ",
-      "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
-      "uf": "RJ",
-      "prioridade_config": 2,
-      "score": 82,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "idade",
-        "etapas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "cfsd",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcam",
-      "sigla": "PCAM",
-      "nome": "Polícia Civil do Estado do Amazonas",
-      "uf": "AM",
-      "prioridade_config": 2,
-      "score": 82,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "etapas",
-        "cfsd"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "pmap",
@@ -552,12 +793,18 @@
       "prioridade_config": 2,
       "score": 82,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pmap",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -580,186 +827,18 @@
       "campos_criticos_genericos": [
         "etapas"
       ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmesp",
-      "sigla": "PMESP",
-      "nome": "Polícia Militar do Estado de São Paulo",
-      "uf": "SP",
-      "prioridade_config": 1,
-      "score": 82,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "etapas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "cfsd",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
       "monitor": {
         "atualizado_em": "2026-05-17",
-        "usou_openai": true,
+        "usou_openai": false,
         "usou_web_search_openai": false,
-        "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
-    },
-    {
-      "id": "pces",
-      "sigla": "PCES",
-      "nome": "Polícia Civil do Espírito Santo",
-      "uf": "ES",
-      "prioridade_config": 2,
-      "score": 84,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "inscritos",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcrs",
-      "sigla": "PCRS",
-      "nome": "Polícia Civil do Rio Grande do Sul",
-      "uf": "RS",
-      "prioridade_config": 2,
-      "score": 84,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "idade",
-        "materias",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "etapas",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "bmpr",
-      "sigla": "CBMPR",
-      "nome": "Corpo de Bombeiros Militar do Paraná",
-      "uf": "PR",
-      "prioridade_config": 2,
-      "score": 85,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "etapas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "cfsd",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
     },
     {
       "id": "pmal",
@@ -769,12 +848,18 @@
       "prioridade_config": 2,
       "score": 85,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pmal",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -796,55 +881,18 @@
       "campos_criticos_genericos": [
         "etapas"
       ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmam",
-      "sigla": "PMAM",
-      "nome": "Polícia Militar do Estado do Amazonas",
-      "uf": "AM",
-      "prioridade_config": 2,
-      "score": 85,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "etapas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "pmrs",
@@ -854,12 +902,18 @@
       "prioridade_config": 2,
       "score": 85,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pmrs",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -881,140 +935,18 @@
       "campos_criticos_genericos": [
         "etapas"
       ],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "prf",
-      "sigla": "PRF",
-      "nome": "Polícia Rodoviária Federal",
-      "uf": "BR",
-      "prioridade_config": 1,
-      "score": 85,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "etapas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [
-        "etapas"
-      ],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
       "monitor": {
         "atualizado_em": "2026-05-17",
-        "usou_openai": true,
+        "usou_openai": false,
         "usou_web_search_openai": false,
-        "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
-    },
-    {
-      "id": "bmap",
-      "sigla": "CBMAP",
-      "nome": "Corpo de Bombeiros Militar do Amapá",
-      "uf": "AP",
-      "prioridade_config": 2,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "materias",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcmg",
-      "sigla": "PCMG",
-      "nome": "Polícia Civil de Minas Gerais",
-      "uf": "MG",
-      "prioridade_config": 1,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "idade",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
     },
     {
       "id": "pcmt",
@@ -1024,12 +956,18 @@
       "prioridade_config": 2,
       "score": 87,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pcmt",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1048,139 +986,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcsc",
-      "sigla": "PCSC",
-      "nome": "Polícia Civil de Santa Catarina",
-      "uf": "SC",
-      "prioridade_config": 2,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "idade",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcsp",
-      "sigla": "PCSP",
-      "nome": "Polícia Civil do Estado de São Paulo",
-      "uf": "SP",
-      "prioridade_config": 1,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "idade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
       "monitor": {
         "atualizado_em": "2026-05-17",
-        "usou_openai": true,
+        "usou_openai": false,
         "usou_web_search_openai": false,
-        "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
-    },
-    {
-      "id": "pmms",
-      "sigla": "PMMS",
-      "nome": "Polícia Militar de Mato Grosso do Sul",
-      "uf": "MS",
-      "prioridade_config": 2,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
     },
     {
       "id": "pmmt",
@@ -1190,12 +1007,18 @@
       "prioridade_config": 2,
       "score": 87,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pmmt",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1215,12 +1038,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "ppmg",
@@ -1230,12 +1059,18 @@
       "prioridade_config": 2,
       "score": 87,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "ppmg",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1256,52 +1091,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "ppsp",
-      "sigla": "PPSP",
-      "nome": "Polícia Penal do Estado de São Paulo",
-      "uf": "SP",
-      "prioridade_config": 2,
-      "score": 87,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas",
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "bmsc",
@@ -1311,12 +1112,18 @@
       "prioridade_config": 2,
       "score": 90,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "bmsc",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1337,12 +1144,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "bmsp",
@@ -1352,12 +1165,18 @@
       "prioridade_config": 2,
       "score": 90,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "bmsp",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1379,251 +1198,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcce",
-      "sigla": "PCCE",
-      "nome": "Polícia Civil do Estado do Ceará",
-      "uf": "CE",
-      "prioridade_config": 2,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "cotas"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "cfsd",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmac",
-      "sigla": "PMAC",
-      "nome": "Polícia Militar do Acre",
-      "uf": "AC",
-      "prioridade_config": 2,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "escolaridade",
-        "banca",
-        "inscritos",
-        "cfsd",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmba",
-      "sigla": "PMBA",
-      "nome": "Polícia Militar da Bahia",
-      "uf": "BA",
-      "prioridade_config": 1,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmerj",
-      "sigla": "PMERJ",
-      "nome": "Polícia Militar do Rio de Janeiro",
-      "uf": "RJ",
-      "prioridade_config": 1,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "etapas",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pmpr",
-      "sigla": "PMPR",
-      "nome": "Polícia Militar do Paraná",
-      "uf": "PR",
-      "prioridade_config": 2,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "cfsd",
-        "estagio",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "ppac",
-      "sigla": "PPAC",
-      "nome": "Polícia Penal do Acre",
-      "uf": "AC",
-      "prioridade_config": 2,
-      "score": 90,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [
-        "validade"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "banca",
-        "inscritos",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "ppal",
@@ -1633,12 +1219,18 @@
       "prioridade_config": 2,
       "score": 90,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "ppal",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
@@ -1659,54 +1251,73 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
-      "id": "bmes",
-      "sigla": "CBMES",
-      "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
-      "uf": "ES",
+      "id": "bmap",
+      "sigla": "CBMAP",
+      "nome": "Corpo de Bombeiros Militar do Amapá",
+      "uf": "AP",
       "prioridade_config": 2,
-      "score": 93,
+      "score": 92,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "bmap",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
-      "campos_genericos": [],
+      "campos_genericos": [
+        "idade",
+        "validade"
+      ],
       "campos_concretos": [
         "edital",
         "salario",
         "vagas",
         "cotas",
-        "idade",
         "escolaridade",
         "materias",
-        "banca",
         "inscritos",
         "etapas",
         "cfsd",
         "estagio",
-        "validade",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
     },
     {
       "id": "bmmg",
@@ -1714,71 +1325,52 @@
       "nome": "Corpo de Bombeiros Militar de Minas Gerais",
       "uf": "MG",
       "prioridade_config": 2,
-      "score": 93,
+      "score": 92,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "bmmg",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
-      "campos_genericos": [],
+      "campos_genericos": [
+        "materias",
+        "validade"
+      ],
       "campos_concretos": [
         "edital",
         "salario",
         "vagas",
+        "cotas",
         "escolaridade",
-        "materias",
         "banca",
         "inscritos",
         "cfsd",
-        "validade",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcac",
-      "sigla": "PCAC",
-      "nome": "Polícia Civil do Acre",
-      "uf": "AC",
-      "prioridade_config": 2,
-      "score": 93,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "materias",
-        "etapas",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
     },
     {
       "id": "pcal",
@@ -1788,12 +1380,18 @@
       "prioridade_config": 2,
       "score": 93,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pcal",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [],
@@ -1810,46 +1408,18 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcba",
-      "sigla": "PCBA",
-      "nome": "Polícia Civil da Bahia",
-      "uf": "BA",
-      "prioridade_config": 1,
-      "score": 93,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
     },
     {
       "id": "pcdf",
@@ -1859,12 +1429,18 @@
       "prioridade_config": 2,
       "score": 93,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pcdf",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [],
@@ -1881,51 +1457,17 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": null
-    },
-    {
-      "id": "pcerj",
-      "sigla": "PCERJ",
-      "nome": "Polícia Civil do Rio de Janeiro",
-      "uf": "RJ",
-      "prioridade_config": 1,
-      "score": 93,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
       "monitor": {
         "atualizado_em": "2026-05-17",
-        "usou_openai": true,
+        "usou_openai": false,
         "usou_web_search_openai": false,
-        "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
     },
     {
@@ -1936,12 +1478,18 @@
       "prioridade_config": 2,
       "score": 93,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
       "motivos": [
-        "sem ação necessária"
+        "fonte direta falhou ou não trouxe texto suficiente"
       ],
-      "workflow_sugerido": null,
+      "workflow_sugerido": {
+        "instituicao": "pcpr",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [],
@@ -1955,12 +1503,63 @@
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
-      "fonte_falhou": false,
+      "fonte_falhou": true,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
       "ultima_pesquisa": "2026-05-17",
-      "monitor": null
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+      }
+    },
+    {
+      "id": "pcmg",
+      "sigla": "PCMG",
+      "nome": "Polícia Civil de Minas Gerais",
+      "uf": "MG",
+      "prioridade_config": 1,
+      "score": 87,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "existe rascunho gerado para revisão"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "idade",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 70, campos críticos genéricos: escolaridade, campos críticos sem confirmação: nenhum."
+      }
     },
     {
       "id": "pf",
@@ -1970,10 +1569,10 @@
       "prioridade_config": 1,
       "score": 93,
       "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "alta",
       "motivos": [
-        "sem ação necessária"
+        "existe rascunho gerado para revisão"
       ],
       "workflow_sugerido": null,
       "idade_dias": 0,
@@ -1996,6 +1595,288 @@
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
       "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: a nova versão (85/100) ficou pior que a versão publicada (97/100)."
+      }
+    },
+    {
+      "id": "pcms",
+      "sigla": "PCMS",
+      "nome": "Polícia Civil de Mato Grosso do Sul",
+      "uf": "MS",
+      "prioridade_config": 2,
+      "score": 79,
+      "qualidade": "media",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "existe rascunho gerado para revisão"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "cotas",
+        "etapas",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "inscritos",
+        "estagio",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [
+        "etapas"
+      ],
+      "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 73, campos críticos genéricos: nenhum, campos críticos sem confirmação: etapas."
+      }
+    },
+    {
+      "id": "pcrs",
+      "sigla": "PCRS",
+      "nome": "Polícia Civil do Rio Grande do Sul",
+      "uf": "RS",
+      "prioridade_config": 2,
+      "score": 84,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "existe rascunho gerado para revisão"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "idade",
+        "materias",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "banca",
+        "inscritos",
+        "etapas",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 61, campos críticos genéricos: nenhum, campos críticos sem confirmação: nenhum."
+      }
+    },
+    {
+      "id": "pmms",
+      "sigla": "PMMS",
+      "nome": "Polícia Militar de Mato Grosso do Sul",
+      "uf": "MS",
+      "prioridade_config": 2,
+      "score": 87,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "existe rascunho gerado para revisão"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "cotas",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum."
+      }
+    },
+    {
+      "id": "ppsp",
+      "sigla": "PPSP",
+      "nome": "Polícia Penal do Estado de São Paulo",
+      "uf": "SP",
+      "prioridade_config": 2,
+      "score": 87,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "existe rascunho gerado para revisão"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [
+        "cotas",
+        "validade"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": true,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum."
+      }
+    },
+    {
+      "id": "bmes",
+      "sigla": "CBMES",
+      "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+      "uf": "ES",
+      "prioridade_config": 2,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "estagio",
+        "validade",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "pces",
+      "sigla": "PCES",
+      "nome": "Polícia Civil do Espírito Santo",
+      "uf": "ES",
+      "prioridade_config": 2,
+      "score": 80,
+      "qualidade": "media",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [
+        "cotas",
+        "validade"
+      ],
+      "campos_genericos": [
+        "inscritos"
+      ],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
       "tem_rascunho": false,
       "publicado_por_modo_qualificado": false,
       "publicacao_forcada_por_credito_openai": false,
@@ -2005,19 +1886,508 @@
         "usou_openai": true,
         "usou_web_search_openai": false,
         "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pcsc",
+      "sigla": "PCSC",
+      "nome": "Polícia Civil de Santa Catarina",
+      "uf": "SC",
+      "prioridade_config": 2,
+      "score": 84,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [
+        "idade",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pcba",
+      "sigla": "PCBA",
+      "nome": "Polícia Civil da Bahia",
+      "uf": "BA",
+      "prioridade_config": 1,
+      "score": 89,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "bmrj",
+      "sigla": "CBMERJ",
+      "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+      "uf": "RJ",
+      "prioridade_config": 2,
+      "score": 91,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [
+        "idade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "validade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pcam",
+      "sigla": "PCAM",
+      "nome": "Polícia Civil do Estado do Amazonas",
+      "uf": "AM",
+      "prioridade_config": 2,
+      "score": 91,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [
+        "cfsd"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "estagio",
+        "validade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pmpr",
+      "sigla": "PMPR",
+      "nome": "Polícia Militar do Paraná",
+      "uf": "PR",
+      "prioridade_config": 2,
+      "score": 91,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "cfsd",
+        "estagio",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "bmpr",
+      "sigla": "CBMPR",
+      "nome": "Corpo de Bombeiros Militar do Paraná",
+      "uf": "PR",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "validade",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pcac",
+      "sigla": "PCAC",
+      "nome": "Polícia Civil do Acre",
+      "uf": "AC",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "materias",
+        "etapas",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pcce",
+      "sigla": "PCCE",
+      "nome": "Polícia Civil do Estado do Ceará",
+      "uf": "CE",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "validade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pmac",
+      "sigla": "PMAC",
+      "nome": "Polícia Militar do Acre",
+      "uf": "AC",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "escolaridade",
+        "banca",
+        "inscritos",
+        "cfsd",
+        "validade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "pmam",
+      "sigla": "PMAM",
+      "nome": "Polícia Militar do Estado do Amazonas",
+      "uf": "AM",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "validade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
+      }
+    },
+    {
+      "id": "ppac",
+      "sigla": "PPAC",
+      "nome": "Polícia Penal do Acre",
+      "uf": "AC",
+      "prioridade_config": 2,
+      "score": 98,
+      "qualidade": "alta",
+      "acao": "ok",
+      "prioridade_operacional": "baixa",
+      "motivos": [
+        "sem ação necessária"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "inscritos",
+        "etapas",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": false,
+        "motivo": "Mudança detectada nas fontes monitoradas."
       }
     }
   ],
   "grupos": {
     "rodar_qualificado": [
       {
-        "id": "pmmg",
-        "sigla": "PMMG",
-        "nome": "Polícia Militar de Minas Gerais",
-        "uf": "MG",
+        "id": "pmesp",
+        "sigla": "PMESP",
+        "nome": "Polícia Militar do Estado de São Paulo",
+        "uf": "SP",
         "prioridade_config": 1,
-        "score": 90,
+        "score": 82,
         "qualidade": "alta",
         "acao": "rodar_qualificado",
         "prioridade_operacional": "alta",
@@ -2025,7 +2395,7 @@
           "fonte direta falhou ou não trouxe texto suficiente"
         ],
         "workflow_sugerido": {
-          "instituicao": "pmmg",
+          "instituicao": "pmesp",
           "limite": "1",
           "forcar_atualizacao": "true",
           "usar_web_search": "true",
@@ -2034,7 +2404,119 @@
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
-          "validade"
+          "cotas",
+          "etapas"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "cfsd",
+          "validade",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [
+          "etapas"
+        ],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      },
+      {
+        "id": "prf",
+        "sigla": "PRF",
+        "nome": "Polícia Rodoviária Federal",
+        "uf": "BR",
+        "prioridade_config": 1,
+        "score": 85,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "prf",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "etapas"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "validade",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [
+          "etapas"
+        ],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      },
+      {
+        "id": "pcsp",
+        "sigla": "PCSP",
+        "nome": "Polícia Civil do Estado de São Paulo",
+        "uf": "SP",
+        "prioridade_config": 1,
+        "score": 87,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pcsp",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "cotas",
+          "idade"
         ],
         "campos_concretos": [
           "edital",
@@ -2042,7 +2524,10 @@
           "vagas",
           "escolaridade",
           "materias",
-          "cfsd",
+          "banca",
+          "inscritos",
+          "etapas",
+          "validade",
           "previsao"
         ],
         "campos_criticos_ruins": [],
@@ -2057,7 +2542,205 @@
           "usou_openai": false,
           "usou_web_search_openai": false,
           "publicacao_bloqueada": true,
-          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado."
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      },
+      {
+        "id": "pmmg",
+        "sigla": "PMMG",
+        "nome": "Polícia Militar de Minas Gerais",
+        "uf": "MG",
+        "prioridade_config": 1,
+        "score": 87,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pmmg",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "idade",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "pmba",
+        "sigla": "PMBA",
+        "nome": "Polícia Militar da Bahia",
+        "uf": "BA",
+        "prioridade_config": 1,
+        "score": 90,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pmba",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
+          "banca",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      },
+      {
+        "id": "pmerj",
+        "sigla": "PMERJ",
+        "nome": "Polícia Militar do Rio de Janeiro",
+        "uf": "RJ",
+        "prioridade_config": 1,
+        "score": 90,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pmerj",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      },
+      {
+        "id": "pcerj",
+        "sigla": "PCERJ",
+        "nome": "Polícia Civil do Rio de Janeiro",
+        "uf": "RJ",
+        "prioridade_config": 1,
+        "score": 93,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pcerj",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
       },
       {
@@ -2066,14 +2749,15 @@
         "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
         "uf": "MS",
         "prioridade_config": 2,
-        "score": 64,
+        "score": 43,
         "qualidade": "baixa",
         "acao": "rodar_qualificado",
         "prioridade_operacional": "media",
         "motivos": [
-          "score muito baixo (64)",
-          "campos críticos genéricos: escolaridade, etapas",
-          "muitos campos genéricos: cotas, escolaridade, materias, etapas, estagio, validade"
+          "score muito baixo (43)",
+          "campos críticos genéricos: salario, escolaridade",
+          "muitos campos genéricos: salario, cotas, idade, escolaridade, materias, estagio",
+          "foi publicado por modo qualificado; recomenda revisão visual"
         ],
         "workflow_sugerido": {
           "instituicao": "bmms",
@@ -2085,33 +2769,97 @@
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
+          "salario",
           "cotas",
+          "idade",
           "escolaridade",
           "materias",
-          "etapas",
           "estagio",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "vagas",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [
+          "salario",
+          "escolaridade"
+        ],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "pmes",
+        "sigla": "PMES",
+        "nome": "Polícia Militar do Espírito Santo",
+        "uf": "ES",
+        "prioridade_config": 2,
+        "score": 69,
+        "qualidade": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "score abaixo do mínimo (69)",
+          "muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pmes",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "cotas",
+          "idade",
+          "materias",
+          "inscritos",
+          "etapas",
           "validade"
         ],
         "campos_concretos": [
           "edital",
           "salario",
           "vagas",
-          "idade",
+          "escolaridade",
           "banca",
-          "cfsd",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [
-          "escolaridade",
           "etapas"
         ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "ppms",
@@ -2124,6 +2872,7 @@
         "acao": "rodar_qualificado",
         "prioridade_operacional": "media",
         "motivos": [
+          "existe rascunho gerado para revisão",
           "score abaixo do mínimo (70)",
           "campos críticos genéricos: vagas, banca"
         ],
@@ -2156,11 +2905,75 @@
           "banca"
         ],
         "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 37, campos críticos genéricos: nenhum, campos críticos sem confirmação: vagas, banca."
+        }
+      },
+      {
+        "id": "bmmt",
+        "sigla": "CBMMT",
+        "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+        "uf": "MT",
+        "prioridade_config": 2,
+        "score": 75,
+        "qualidade": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "score abaixo do mínimo (75)"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "bmmt",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "materias",
+          "etapas",
+          "cfsd",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "banca",
+          "inscritos",
+          "estagio",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [
+          "etapas"
+        ],
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "pmsc",
@@ -2231,6 +3044,7 @@
         "acao": "rodar_qualificado",
         "prioridade_operacional": "media",
         "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
           "score abaixo do mínimo (77)",
           "campos críticos genéricos: vagas, banca"
         ],
@@ -2261,107 +3075,19 @@
           "vagas",
           "banca"
         ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      }
-    ],
-    "revisar": [
-      {
-        "id": "pmes",
-        "sigla": "PMES",
-        "nome": "Polícia Militar do Espírito Santo",
-        "uf": "ES",
-        "prioridade_config": 2,
-        "score": 69,
-        "qualidade": "baixa",
-        "acao": "revisar_ou_rodar_qualificado",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "score abaixo do mínimo (69)",
-          "muitos campos genéricos: cotas, idade, materias, inscritos, etapas, validade"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "idade",
-          "materias",
-          "inscritos",
-          "etapas",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "banca",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
-      {
-        "id": "bmmt",
-        "sigla": "CBMMT",
-        "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
-        "uf": "MT",
-        "prioridade_config": 2,
-        "score": 75,
-        "qualidade": "baixa",
-        "acao": "revisar_ou_rodar_qualificado",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "score abaixo do mínimo (75)"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "materias",
-          "etapas",
-          "cfsd",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "estagio",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      }
-    ],
-    "rodar_economico": [],
-    "ok": [
       {
         "id": "pcap",
         "sigla": "PCAP",
@@ -2370,12 +3096,18 @@
         "prioridade_config": 2,
         "score": 79,
         "qualidade": "media",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pcap",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -2398,144 +3130,18 @@
         "campos_criticos_genericos": [
           "etapas"
         ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcms",
-        "sigla": "PCMS",
-        "nome": "Polícia Civil de Mato Grosso do Sul",
-        "uf": "MS",
-        "prioridade_config": 2,
-        "score": 79,
-        "qualidade": "media",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "etapas",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "inscritos",
-          "estagio",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "bmrj",
-        "sigla": "CBMERJ",
-        "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
-        "uf": "RJ",
-        "prioridade_config": 2,
-        "score": 82,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "idade",
-          "etapas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "cfsd",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcam",
-        "sigla": "PCAM",
-        "nome": "Polícia Civil do Estado do Amazonas",
-        "uf": "AM",
-        "prioridade_config": 2,
-        "score": 82,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "etapas",
-          "cfsd"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "pmap",
@@ -2545,12 +3151,18 @@
         "prioridade_config": 2,
         "score": 82,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pmap",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -2573,186 +3185,18 @@
         "campos_criticos_genericos": [
           "etapas"
         ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmesp",
-        "sigla": "PMESP",
-        "nome": "Polícia Militar do Estado de São Paulo",
-        "uf": "SP",
-        "prioridade_config": 1,
-        "score": 82,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "etapas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "cfsd",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": {
           "atualizado_em": "2026-05-17",
-          "usou_openai": true,
+          "usou_openai": false,
           "usou_web_search_openai": false,
-          "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
-      },
-      {
-        "id": "pces",
-        "sigla": "PCES",
-        "nome": "Polícia Civil do Espírito Santo",
-        "uf": "ES",
-        "prioridade_config": 2,
-        "score": 84,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "inscritos",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcrs",
-        "sigla": "PCRS",
-        "nome": "Polícia Civil do Rio Grande do Sul",
-        "uf": "RS",
-        "prioridade_config": 2,
-        "score": 84,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "idade",
-          "materias",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "etapas",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "bmpr",
-        "sigla": "CBMPR",
-        "nome": "Corpo de Bombeiros Militar do Paraná",
-        "uf": "PR",
-        "prioridade_config": 2,
-        "score": 85,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "etapas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "cfsd",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
       },
       {
         "id": "pmal",
@@ -2762,12 +3206,18 @@
         "prioridade_config": 2,
         "score": 85,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pmal",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -2789,55 +3239,18 @@
         "campos_criticos_genericos": [
           "etapas"
         ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmam",
-        "sigla": "PMAM",
-        "nome": "Polícia Militar do Estado do Amazonas",
-        "uf": "AM",
-        "prioridade_config": 2,
-        "score": 85,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "etapas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "pmrs",
@@ -2847,12 +3260,18 @@
         "prioridade_config": 2,
         "score": 85,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pmrs",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -2874,140 +3293,18 @@
         "campos_criticos_genericos": [
           "etapas"
         ],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "prf",
-        "sigla": "PRF",
-        "nome": "Polícia Rodoviária Federal",
-        "uf": "BR",
-        "prioridade_config": 1,
-        "score": 85,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "etapas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [
-          "etapas"
-        ],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": {
           "atualizado_em": "2026-05-17",
-          "usou_openai": true,
+          "usou_openai": false,
           "usou_web_search_openai": false,
-          "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
-      },
-      {
-        "id": "bmap",
-        "sigla": "CBMAP",
-        "nome": "Corpo de Bombeiros Militar do Amapá",
-        "uf": "AP",
-        "prioridade_config": 2,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "materias",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcmg",
-        "sigla": "PCMG",
-        "nome": "Polícia Civil de Minas Gerais",
-        "uf": "MG",
-        "prioridade_config": 1,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "idade",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
       },
       {
         "id": "pcmt",
@@ -3017,12 +3314,18 @@
         "prioridade_config": 2,
         "score": 87,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pcmt",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3041,139 +3344,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcsc",
-        "sigla": "PCSC",
-        "nome": "Polícia Civil de Santa Catarina",
-        "uf": "SC",
-        "prioridade_config": 2,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "idade",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcsp",
-        "sigla": "PCSP",
-        "nome": "Polícia Civil do Estado de São Paulo",
-        "uf": "SP",
-        "prioridade_config": 1,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "idade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": {
           "atualizado_em": "2026-05-17",
-          "usou_openai": true,
+          "usou_openai": false,
           "usou_web_search_openai": false,
-          "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
-      },
-      {
-        "id": "pmms",
-        "sigla": "PMMS",
-        "nome": "Polícia Militar de Mato Grosso do Sul",
-        "uf": "MS",
-        "prioridade_config": 2,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
       },
       {
         "id": "pmmt",
@@ -3183,12 +3365,18 @@
         "prioridade_config": 2,
         "score": 87,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pmmt",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3208,12 +3396,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "ppmg",
@@ -3223,12 +3417,18 @@
         "prioridade_config": 2,
         "score": 87,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "ppmg",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3249,52 +3449,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "ppsp",
-        "sigla": "PPSP",
-        "nome": "Polícia Penal do Estado de São Paulo",
-        "uf": "SP",
-        "prioridade_config": 2,
-        "score": 87,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas",
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "bmsc",
@@ -3304,12 +3470,18 @@
         "prioridade_config": 2,
         "score": 90,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "bmsc",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3330,12 +3502,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "bmsp",
@@ -3345,12 +3523,18 @@
         "prioridade_config": 2,
         "score": 90,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "bmsp",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3372,251 +3556,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcce",
-        "sigla": "PCCE",
-        "nome": "Polícia Civil do Estado do Ceará",
-        "uf": "CE",
-        "prioridade_config": 2,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "cotas"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "cfsd",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmac",
-        "sigla": "PMAC",
-        "nome": "Polícia Militar do Acre",
-        "uf": "AC",
-        "prioridade_config": 2,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "escolaridade",
-          "banca",
-          "inscritos",
-          "cfsd",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmba",
-        "sigla": "PMBA",
-        "nome": "Polícia Militar da Bahia",
-        "uf": "BA",
-        "prioridade_config": 1,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmerj",
-        "sigla": "PMERJ",
-        "nome": "Polícia Militar do Rio de Janeiro",
-        "uf": "RJ",
-        "prioridade_config": 1,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "etapas",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pmpr",
-        "sigla": "PMPR",
-        "nome": "Polícia Militar do Paraná",
-        "uf": "PR",
-        "prioridade_config": 2,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "cfsd",
-          "estagio",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "ppac",
-        "sigla": "PPAC",
-        "nome": "Polícia Penal do Acre",
-        "uf": "AC",
-        "prioridade_config": 2,
-        "score": 90,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [
-          "validade"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "banca",
-          "inscritos",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "ppal",
@@ -3626,12 +3577,18 @@
         "prioridade_config": 2,
         "score": 90,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "ppal",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
@@ -3652,54 +3609,73 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
-        "id": "bmes",
-        "sigla": "CBMES",
-        "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
-        "uf": "ES",
+        "id": "bmap",
+        "sigla": "CBMAP",
+        "nome": "Corpo de Bombeiros Militar do Amapá",
+        "uf": "AP",
         "prioridade_config": 2,
-        "score": 93,
+        "score": 92,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "bmap",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
-        "campos_genericos": [],
+        "campos_genericos": [
+          "idade",
+          "validade"
+        ],
         "campos_concretos": [
           "edital",
           "salario",
           "vagas",
           "cotas",
-          "idade",
           "escolaridade",
           "materias",
-          "banca",
           "inscritos",
           "etapas",
           "cfsd",
           "estagio",
-          "validade",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
       },
       {
         "id": "bmmg",
@@ -3707,71 +3683,52 @@
         "nome": "Corpo de Bombeiros Militar de Minas Gerais",
         "uf": "MG",
         "prioridade_config": 2,
-        "score": 93,
+        "score": 92,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "bmmg",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
-        "campos_genericos": [],
+        "campos_genericos": [
+          "materias",
+          "validade"
+        ],
         "campos_concretos": [
           "edital",
           "salario",
           "vagas",
+          "cotas",
           "escolaridade",
-          "materias",
           "banca",
           "inscritos",
           "cfsd",
-          "validade",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcac",
-        "sigla": "PCAC",
-        "nome": "Polícia Civil do Acre",
-        "uf": "AC",
-        "prioridade_config": 2,
-        "score": 93,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "materias",
-          "etapas",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
       },
       {
         "id": "pcal",
@@ -3781,12 +3738,18 @@
         "prioridade_config": 2,
         "score": 93,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pcal",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [],
@@ -3803,46 +3766,18 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcba",
-        "sigla": "PCBA",
-        "nome": "Polícia Civil da Bahia",
-        "uf": "BA",
-        "prioridade_config": 1,
-        "score": 93,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
       },
       {
         "id": "pcdf",
@@ -3852,12 +3787,18 @@
         "prioridade_config": 2,
         "score": 93,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pcdf",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [],
@@ -3874,51 +3815,17 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": null
-      },
-      {
-        "id": "pcerj",
-        "sigla": "PCERJ",
-        "nome": "Polícia Civil do Rio de Janeiro",
-        "uf": "RJ",
-        "prioridade_config": 1,
-        "score": 93,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": {
           "atualizado_em": "2026-05-17",
-          "usou_openai": true,
+          "usou_openai": false,
           "usou_web_search_openai": false,
-          "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
       },
       {
@@ -3929,12 +3836,18 @@
         "prioridade_config": 2,
         "score": 93,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
         "motivos": [
-          "sem ação necessária"
+          "fonte direta falhou ou não trouxe texto suficiente"
         ],
-        "workflow_sugerido": null,
+        "workflow_sugerido": {
+          "instituicao": "pcpr",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [],
@@ -3948,12 +3861,65 @@
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
-        "fonte_falhou": false,
+        "fonte_falhou": true,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
-        "monitor": null
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
+        }
+      }
+    ],
+    "revisar": [
+      {
+        "id": "pcmg",
+        "sigla": "PCMG",
+        "nome": "Polícia Civil de Minas Gerais",
+        "uf": "MG",
+        "prioridade_config": 1,
+        "score": 87,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "existe rascunho gerado para revisão"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "idade",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 70, campos críticos genéricos: escolaridade, campos críticos sem confirmação: nenhum."
+        }
       },
       {
         "id": "pf",
@@ -3963,10 +3929,10 @@
         "prioridade_config": 1,
         "score": 93,
         "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "alta",
         "motivos": [
-          "sem ação necessária"
+          "existe rascunho gerado para revisão"
         ],
         "workflow_sugerido": null,
         "idade_dias": 0,
@@ -3989,6 +3955,291 @@
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
         "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: a nova versão (85/100) ficou pior que a versão publicada (97/100)."
+        }
+      },
+      {
+        "id": "pcms",
+        "sigla": "PCMS",
+        "nome": "Polícia Civil de Mato Grosso do Sul",
+        "uf": "MS",
+        "prioridade_config": 2,
+        "score": 79,
+        "qualidade": "media",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "existe rascunho gerado para revisão"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "cotas",
+          "etapas",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "inscritos",
+          "estagio",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [
+          "etapas"
+        ],
+        "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 73, campos críticos genéricos: nenhum, campos críticos sem confirmação: etapas."
+        }
+      },
+      {
+        "id": "pcrs",
+        "sigla": "PCRS",
+        "nome": "Polícia Civil do Rio Grande do Sul",
+        "uf": "RS",
+        "prioridade_config": 2,
+        "score": 84,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "existe rascunho gerado para revisão"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "idade",
+          "materias",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "banca",
+          "inscritos",
+          "etapas",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 61, campos críticos genéricos: nenhum, campos críticos sem confirmação: nenhum."
+        }
+      },
+      {
+        "id": "pmms",
+        "sigla": "PMMS",
+        "nome": "Polícia Militar de Mato Grosso do Sul",
+        "uf": "MS",
+        "prioridade_config": 2,
+        "score": 87,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "existe rascunho gerado para revisão"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "cotas",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum."
+        }
+      },
+      {
+        "id": "ppsp",
+        "sigla": "PPSP",
+        "nome": "Polícia Penal do Estado de São Paulo",
+        "uf": "SP",
+        "prioridade_config": 2,
+        "score": 87,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "existe rascunho gerado para revisão"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [
+          "cotas",
+          "validade"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": true,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum."
+        }
+      },
+      {
+        "id": "bmes",
+        "sigla": "CBMES",
+        "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+        "uf": "ES",
+        "prioridade_config": 2,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "estagio",
+          "validade",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      }
+    ],
+    "rodar_economico": [],
+    "ok": [
+      {
+        "id": "pces",
+        "sigla": "PCES",
+        "nome": "Polícia Civil do Espírito Santo",
+        "uf": "ES",
+        "prioridade_config": 2,
+        "score": 80,
+        "qualidade": "media",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [
+          "cotas",
+          "validade"
+        ],
+        "campos_genericos": [
+          "inscritos"
+        ],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
         "tem_rascunho": false,
         "publicado_por_modo_qualificado": false,
         "publicacao_forcada_por_credito_openai": false,
@@ -3998,7 +4249,496 @@
           "usou_openai": true,
           "usou_web_search_openai": false,
           "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes oficiais monitoradas."
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pcsc",
+        "sigla": "PCSC",
+        "nome": "Polícia Civil de Santa Catarina",
+        "uf": "SC",
+        "prioridade_config": 2,
+        "score": 84,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [
+          "idade",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pcba",
+        "sigla": "PCBA",
+        "nome": "Polícia Civil da Bahia",
+        "uf": "BA",
+        "prioridade_config": 1,
+        "score": 89,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "bmrj",
+        "sigla": "CBMERJ",
+        "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+        "uf": "RJ",
+        "prioridade_config": 2,
+        "score": 91,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [
+          "idade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "validade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pcam",
+        "sigla": "PCAM",
+        "nome": "Polícia Civil do Estado do Amazonas",
+        "uf": "AM",
+        "prioridade_config": 2,
+        "score": 91,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [
+          "cfsd"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "estagio",
+          "validade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pmpr",
+        "sigla": "PMPR",
+        "nome": "Polícia Militar do Paraná",
+        "uf": "PR",
+        "prioridade_config": 2,
+        "score": 91,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "cfsd",
+          "estagio",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "bmpr",
+        "sigla": "CBMPR",
+        "nome": "Corpo de Bombeiros Militar do Paraná",
+        "uf": "PR",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "validade",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pcac",
+        "sigla": "PCAC",
+        "nome": "Polícia Civil do Acre",
+        "uf": "AC",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "materias",
+          "etapas",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pcce",
+        "sigla": "PCCE",
+        "nome": "Polícia Civil do Estado do Ceará",
+        "uf": "CE",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "validade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pmac",
+        "sigla": "PMAC",
+        "nome": "Polícia Militar do Acre",
+        "uf": "AC",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "escolaridade",
+          "banca",
+          "inscritos",
+          "cfsd",
+          "validade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "pmam",
+        "sigla": "PMAM",
+        "nome": "Polícia Militar do Estado do Amazonas",
+        "uf": "AM",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "validade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
+        }
+      },
+      {
+        "id": "ppac",
+        "sigla": "PPAC",
+        "nome": "Polícia Penal do Acre",
+        "uf": "AC",
+        "prioridade_config": 2,
+        "score": 98,
+        "qualidade": "alta",
+        "acao": "ok",
+        "prioridade_operacional": "baixa",
+        "motivos": [
+          "sem ação necessária"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "inscritos",
+          "etapas",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": false,
+          "motivo": "Mudança detectada nas fontes monitoradas."
         }
       }
     ]
