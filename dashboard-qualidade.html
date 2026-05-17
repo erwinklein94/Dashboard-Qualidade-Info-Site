@@ -667,11 +667,11 @@
   <main class="container">
     <section class="grid-kpis" aria-label="Resumo de qualidade">
       <div class="kpi gold"><small>Total</small><strong id="kpiTotal">0</strong><span>instituições no relatório</span></div>
-      <div class="kpi ok"><small>OK</small><strong id="kpiOk">0</strong><span>sem ação imediata</span></div>
-      <div class="kpi bad"><small>Qualificado</small><strong id="kpiQualificado">0</strong><span>rodar pesquisa melhor</span></div>
-      <div class="kpi warn"><small>Revisar</small><strong id="kpiRevisar">0</strong><span>olhar rascunho ou site</span></div>
-      <div class="kpi purple"><small>Fonte falhou</small><strong id="kpiFonte">0</strong><span>precisa fallback/web search</span></div>
-      <div class="kpi blue"><small>Rascunhos</small><strong id="kpiRascunho">0</strong><span>gerados para revisão</span></div>
+      <div class="kpi ok"><small>OK editorial</small><strong id="kpiOk">0</strong><span>conteúdo suficiente</span></div>
+      <div class="kpi bad"><small>Qualificar</small><strong id="kpiQualificado">0</strong><span>conteúdo fraco</span></div>
+      <div class="kpi warn"><small>Pesquisa inicial</small><strong id="kpiRevisar">0</strong><span>criar primeira versão</span></div>
+      <div class="kpi purple"><small>Revisar</small><strong id="kpiFonte">0</strong><span>resultado pago/rascunho</span></div>
+      <div class="kpi blue"><small>Fonte/monitor</small><strong id="kpiRascunho">0</strong><span>fonte direta falhou</span></div>
     </section>
 
     <section class="dashboard-grid">
@@ -787,8 +787,26 @@
       revisar_rascunho_ou_site: 'Revisar rascunho/site',
       rodar_economico: 'Rodar econômico',
       criar_json_inicial: 'Criar JSON inicial',
-      ok: 'OK'
+      ok: 'OK',
+
+      // Diagnóstico operacional calculado pelo dashboard.
+      ok_editorial: 'OK editorial',
+      qualificar_conteudo: 'Qualificar conteúdo',
+      pesquisa_inicial_qualificada: 'Pesquisa inicial',
+      revisar_resultado_pago: 'Revisar resultado pago',
+      ajustar_fonte_monitor: 'Ajustar fonte/monitor'
     };
+
+    const dashboardActionOrder = [
+      'qualificar_conteudo',
+      'pesquisa_inicial_qualificada',
+      'revisar_resultado_pago',
+      'ajustar_fonte_monitor',
+      'rodar_economico',
+      'criar_json_inicial',
+      'ok_editorial',
+      'ok'
+    ];
 
     let currentReport = null;
     let currentRows = [];
@@ -796,23 +814,149 @@
 
     function safeArray(value) { return Array.isArray(value) ? value : []; }
     function text(value) { return String(value ?? '').trim(); }
+    function lower(value) { return text(value).toLowerCase(); }
     function percent(value, total) { return total ? Math.round((value / total) * 100) : 0; }
     function actionLabel(value) { return labels[value] || value || '—'; }
-    function qualityClass(q) { q = text(q).toLowerCase(); return q === 'alta' ? 'ok' : q === 'media' || q === 'média' ? 'warn' : 'bad'; }
-    function actionClass(a) {
-      if (a === 'ok') return 'ok';
-      if (a === 'rodar_qualificado') return 'bad';
-      if (a === 'rodar_economico') return 'blue';
-      if (a && a.includes('revisar')) return 'warn';
-      return 'purple';
-    }
+    function qualityClass(q) { q = lower(q); return q === 'alta' ? 'ok' : q === 'media' || q === 'média' ? 'warn' : 'bad'; }
     function scoreClass(score) { return Number(score) >= 82 ? 'ok' : Number(score) >= 78 ? 'warn' : 'bad'; }
     function escapeHtml(value) {
       return text(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));
     }
 
+    function actionClass(a) {
+      if (a === 'ok' || a === 'ok_editorial') return 'ok';
+      if (a === 'qualificar_conteudo' || a === 'rodar_qualificado' || a === 'pesquisa_inicial_qualificada') return 'bad';
+      if (a === 'rodar_economico' || a === 'ajustar_fonte_monitor') return 'blue';
+      if (a && a.includes('revisar')) return 'warn';
+      return 'purple';
+    }
+
+    function scoreMinimoAtual() {
+      return Number(currentReport?.criterios?.score_minimo_qualificado || 78);
+    }
+
+    function motivosTexto(row) {
+      return safeArray(row.motivos).join(' ').toLowerCase();
+    }
+
+    function isPesquisaInicial(row) {
+      const motivos = motivosTexto(row);
+      return Number(row.prioridade_config) === 3
+        || motivos.includes('muito desatualizado: infinity')
+        || motivos.includes('pesquisa inicial')
+        || !text(row.ultima_pesquisa);
+    }
+
+    function hasProblemaCritico(row) {
+      return safeArray(row.campos_criticos_ruins).length > 0 || safeArray(row.campos_criticos_genericos).length > 0;
+    }
+
+    function workflowQualificado(row) {
+      return row.workflow_sugerido || {
+        instituicao: row.id,
+        limite: '1',
+        forcar_atualizacao: 'true',
+        usar_web_search: 'true',
+        modo_qualidade: 'qualificado'
+      };
+    }
+
+    function diagnosticarLinha(row) {
+      const score = Number(row.score || 0);
+      const minimo = scoreMinimoAtual();
+      const qualidade = lower(row.qualidade);
+      const motivos = motivosTexto(row);
+      const critico = hasProblemaCritico(row);
+      const fonteFalhou = Boolean(row.fonte_falhou);
+      const rascunho = Boolean(row.tem_rascunho);
+      const pago = Boolean(row.publicado_por_modo_qualificado || row.publicacao_forcada_por_credito_openai);
+
+      // 1) Instituições recém-incluídas ou sem primeira pesquisa útil.
+      if (isPesquisaInicial(row)) {
+        return {
+          acao: 'pesquisa_inicial_qualificada',
+          status: 'Precisa primeira pesquisa qualificada',
+          motivo: 'Ainda não há base editorial confiável; rode qualificado uma vez para criar a primeira versão útil.',
+          workflow: workflowQualificado(row),
+          rank: 10
+        };
+      }
+
+      // 2) Conteúdo realmente fraco: baixo score, qualidade baixa ou campo crítico genérico/ruim.
+      // Exceção: se o único problema crítico for “etapas” e a instituição já foi paga/qualificada,
+      // tratamos como revisão visual, não como nova pesquisa obrigatória.
+      const apenasEtapasCritica = safeArray(row.campos_criticos_genericos).length === 1
+        && safeArray(row.campos_criticos_genericos)[0] === 'etapas'
+        && safeArray(row.campos_criticos_ruins).length === 0;
+
+      if ((score < minimo || qualidade === 'baixa' || critico) && !(pago && apenasEtapasCritica && score >= minimo)) {
+        return {
+          acao: 'qualificar_conteudo',
+          status: 'Precisa pesquisa qualificada',
+          motivo: 'O conteúdo tem score baixo, qualidade baixa ou campo crítico genérico/ruim.',
+          workflow: workflowQualificado(row),
+          rank: 20
+        };
+      }
+
+      // 3) Resultado pago ou rascunho: não necessariamente precisa gastar de novo; precisa olhar se ficou bom.
+      if (pago || rascunho) {
+        return {
+          acao: 'revisar_resultado_pago',
+          status: 'Revisar resultado qualificado',
+          motivo: pago
+            ? 'A OpenAI já foi usada; confira visualmente se o texto publicado ficou bom antes de gastar de novo.'
+            : 'Existe rascunho gerado; revise antes de decidir nova pesquisa.',
+          workflow: row.workflow_sugerido || null,
+          rank: 30
+        };
+      }
+
+      // 4) Fonte direta falhou, mas o conteúdo está bom: não é problema editorial, é problema de monitoramento/fonte.
+      if (fonteFalhou) {
+        return {
+          acao: 'ajustar_fonte_monitor',
+          status: 'Ajustar fonte/monitor',
+          motivo: 'O conteúdo está aceitável, mas a fonte direta falhou; ajuste fontes do config ou monitore com fallback.',
+          workflow: null,
+          rank: 40
+        };
+      }
+
+      if (row.acao === 'rodar_economico') {
+        return {
+          acao: 'rodar_economico',
+          status: 'Rodar modo econômico',
+          motivo: 'A rotina econômica está indicada para atualização leve.',
+          workflow: row.workflow_sugerido || null,
+          rank: 50
+        };
+      }
+
+      return {
+        acao: 'ok_editorial',
+        status: 'OK editorial',
+        motivo: 'Conteúdo suficiente para o usuário final; sem ação imediata.',
+        workflow: null,
+        rank: 90
+      };
+    }
+
+    function enriquecerLinha(row, index) {
+      const diag = diagnosticarLinha(row);
+      return {
+        ...row,
+        __index: index,
+        dashboard_acao: diag.acao,
+        dashboard_status: diag.status,
+        dashboard_motivo: diag.motivo,
+        dashboard_workflow_sugerido: diag.workflow,
+        dashboard_rank: diag.rank
+      };
+    }
+
     function workflowText(row) {
-      const w = row.workflow_sugerido;
+      const w = row.dashboard_workflow_sugerido ?? row.workflow_sugerido;
       if (!w) return 'Sem workflow sugerido.';
       return [
         `instituicao: ${w.instituicao}`,
@@ -841,7 +985,8 @@
 
     function normalizeReport(report) {
       if (!report || typeof report !== 'object') throw new Error('JSON inválido: objeto principal não encontrado.');
-      const rows = safeArray(report.fila_acoes).map((row, index) => ({...row, __index: index}));
+      currentReport = report;
+      const rows = safeArray(report.fila_acoes).map((row, index) => enriquecerLinha(row, index));
       if (!rows.length) throw new Error('JSON inválido: campo fila_acoes vazio ou ausente.');
       return { ...report, fila_acoes: rows };
     }
@@ -854,45 +999,54 @@
       }, {});
     }
 
+    function countDashboard(rows, acao) { return rows.filter(r => r.dashboard_acao === acao).length; }
+
     function renderKpis(report) {
-      const resumo = report.resumo || {};
       const rows = report.fila_acoes;
-      const total = Number(resumo.total ?? rows.length);
-      const ok = Number(resumo.ok ?? rows.filter(r => r.acao === 'ok').length);
-      const qualificado = Number(resumo.rodar_qualificado ?? rows.filter(r => r.acao === 'rodar_qualificado').length);
-      const revisar = Number(resumo.revisar ?? rows.filter(r => text(r.acao).includes('revisar')).length);
-      const fonte = Number(resumo.fonte_falhou ?? rows.filter(r => r.fonte_falhou).length);
-      const rascunho = Number(resumo.com_rascunho ?? rows.filter(r => r.tem_rascunho).length);
+      const total = rows.length;
+      const ok = countDashboard(rows, 'ok_editorial');
+      const qualificar = countDashboard(rows, 'qualificar_conteudo');
+      const inicial = countDashboard(rows, 'pesquisa_inicial_qualificada');
+      const revisar = countDashboard(rows, 'revisar_resultado_pago');
+      const fonte = countDashboard(rows, 'ajustar_fonte_monitor');
+      const rascunho = rows.filter(r => r.tem_rascunho).length;
       const okPct = percent(ok, total);
 
       document.getElementById('kpiTotal').textContent = total;
       document.getElementById('kpiOk').textContent = ok;
-      document.getElementById('kpiQualificado').textContent = qualificado;
-      document.getElementById('kpiRevisar').textContent = revisar;
-      document.getElementById('kpiFonte').textContent = fonte;
-      document.getElementById('kpiRascunho').textContent = rascunho;
+      document.getElementById('kpiQualificado').textContent = qualificar;
+      document.getElementById('kpiRevisar').textContent = inicial;
+      document.getElementById('kpiFonte').textContent = revisar;
+      document.getElementById('kpiRascunho').textContent = fonte;
       document.getElementById('reportDate').textContent = report.gerado_em || '—';
       document.getElementById('reportTotal').textContent = total;
-      document.getElementById('mainAction').textContent = qualificado ? `${qualificado} para qualificar` : revisar ? `${revisar} para revisar` : 'Sem ação urgente';
-      document.getElementById('generalStatus').textContent = okPct >= 80 ? 'Bom' : okPct >= 60 ? 'Atenção' : 'Crítico';
+      document.getElementById('mainAction').textContent = qualificar
+        ? `${qualificar} para qualificar conteúdo`
+        : inicial
+          ? `${inicial} para primeira pesquisa`
+          : revisar
+            ? `${revisar} para revisar`
+            : 'Sem ação urgente';
+      document.getElementById('generalStatus').textContent = okPct >= 80 ? 'Bom' : okPct >= 50 ? 'Atenção' : 'Operação inicial';
       document.getElementById('okPercent').textContent = okPct + '%';
       document.getElementById('okRing').style.setProperty('--ok-deg', `${okPct * 3.6}deg`);
 
-      const summary = qualificado
-        ? `Prioridade: rodar modo qualificado em ${qualificado} instituição(ões). Comece pelas de prioridade operacional alta e pelas que tiveram fonte direta falhando.`
-        : revisar
-          ? `Não há fila urgente de pesquisa qualificada, mas ${revisar} instituição(ões) merecem revisão visual ou de rascunho.`
-          : `Cenário saudável: a maior parte do conteúdo está OK e sem ação imediata.`;
+      const summary = qualificar
+        ? `Prioridade real: ${qualificar} instituição(ões) têm conteúdo fraco e precisam de pesquisa qualificada. Além disso, ${inicial} estão em primeira pesquisa e ${revisar} pedem revisão visual de resultado pago/rascunho.`
+        : inicial
+          ? `Não há conteúdo crítico fraco, mas ${inicial} instituição(ões) recém-incluídas precisam de primeira pesquisa qualificada.`
+          : revisar
+            ? `A qualidade editorial está aceitável; revise ${revisar} resultado(s) já gerados antes de gastar novo crédito.`
+            : `Cenário saudável: o conteúdo está OK e sem ação imediata.`;
       document.getElementById('executiveSummary').textContent = summary;
     }
 
     function renderBars(rows) {
       const target = document.getElementById('actionBars');
-      const counts = countBy(rows, 'acao');
+      const counts = countBy(rows, 'dashboard_acao');
       const total = rows.length || 1;
-      const order = ['rodar_qualificado', 'revisar_ou_rodar_qualificado', 'revisar_rascunho_ou_site', 'revisar', 'rodar_economico', 'criar_json_inicial', 'ok'];
       const entries = Object.entries(counts).sort((a,b) => {
-        const ia = order.indexOf(a[0]); const ib = order.indexOf(b[0]);
+        const ia = dashboardActionOrder.indexOf(a[0]); const ib = dashboardActionOrder.indexOf(b[0]);
         return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
       });
       target.innerHTML = entries.map(([acao, count]) => `
@@ -905,22 +1059,23 @@
     }
 
     function barColor(acao) {
-      if (acao === 'ok') return 'var(--ok)';
-      if (acao === 'rodar_qualificado') return 'var(--bad)';
+      if (acao === 'ok' || acao === 'ok_editorial') return 'var(--ok)';
+      if (acao === 'qualificar_conteudo' || acao === 'rodar_qualificado' || acao === 'pesquisa_inicial_qualificada') return 'var(--bad)';
       if (acao && acao.includes('revisar')) return 'var(--warn)';
-      if (acao === 'rodar_economico') return 'var(--blue)';
+      if (acao === 'rodar_economico' || acao === 'ajustar_fonte_monitor') return 'var(--blue)';
       return 'var(--gold)';
     }
 
     function priorityRank(row) {
-      const action = row.acao === 'rodar_qualificado' ? 0 : text(row.acao).includes('revisar') ? 1 : row.acao === 'rodar_economico' ? 2 : 3;
+      const action = Number(row.dashboard_rank || 90);
       const op = row.prioridade_operacional === 'alta' ? 0 : row.prioridade_operacional === 'media' ? 1 : 2;
-      return action * 1000 + op * 100 + Number(row.score || 0);
+      const score = Number(row.score || 0);
+      return action * 1000 + op * 100 + score;
     }
 
     function renderQueue(rows) {
       const queue = rows
-        .filter(r => r.acao !== 'ok')
+        .filter(r => r.dashboard_acao !== 'ok_editorial' && r.dashboard_acao !== 'ok')
         .sort((a,b) => priorityRank(a) - priorityRank(b))
         .slice(0, 8);
       const target = document.getElementById('priorityQueue');
@@ -938,10 +1093,13 @@
             <div class="badges">
               <span class="badge ${scoreClass(row.score)}">Score ${escapeHtml(row.score)}</span>
               <span class="badge ${qualityClass(row.qualidade)}">${escapeHtml(row.qualidade)}</span>
-              <span class="badge ${actionClass(row.acao)}">${escapeHtml(actionLabel(row.acao))}</span>
+              <span class="badge ${actionClass(row.dashboard_acao)}">${escapeHtml(actionLabel(row.dashboard_acao))}</span>
             </div>
           </div>
-          <ul class="motives">${safeArray(row.motivos).slice(0,4).map(m => `<li>${escapeHtml(m)}</li>`).join('')}</ul>
+          <ul class="motives">
+            <li><strong>Diagnóstico:</strong> ${escapeHtml(row.dashboard_motivo)}</li>
+            ${safeArray(row.motivos).slice(0,3).map(m => `<li>${escapeHtml(m)}</li>`).join('')}
+          </ul>
           <div class="workflow-box">${escapeHtml(workflowText(row)).replace(/\n/g,'<br>')}</div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;">
             <button class="button small gold" onclick='copyText(${JSON.stringify(workflowText(row))})'>Copiar workflow</button>
@@ -952,7 +1110,7 @@
     }
 
     function populateFilters(rows) {
-      const actions = [...new Set(rows.map(r => r.acao).filter(Boolean))].sort();
+      const actions = [...new Set(rows.map(r => r.dashboard_acao).filter(Boolean))].sort((a,b)=>dashboardActionOrder.indexOf(a)-dashboardActionOrder.indexOf(b));
       const qualities = [...new Set(rows.map(r => r.qualidade).filter(Boolean))].sort();
       const ufs = [...new Set(rows.map(r => r.uf).filter(Boolean))].sort();
       fillSelect('filterAction', actions, actionLabel);
@@ -967,23 +1125,21 @@
     }
 
     function applyFilters() {
-      const q = text(document.getElementById('search').value).toLowerCase();
+      const q = lower(document.getElementById('search').value);
       const action = document.getElementById('filterAction').value;
       const quality = document.getElementById('filterQuality').value;
       const uf = document.getElementById('filterUf').value;
       const priority = document.getElementById('filterPriority').value;
 
       filteredRows = currentRows.filter(row => {
-        const hay = [row.id, row.sigla, row.nome, row.uf, row.acao, row.qualidade, ...(row.motivos || [])].join(' ').toLowerCase();
+        const hay = [row.id, row.sigla, row.nome, row.uf, row.dashboard_acao, row.dashboard_status, row.dashboard_motivo, row.acao, row.qualidade, ...(row.motivos || [])].join(' ').toLowerCase();
         return (!q || hay.includes(q))
-          && (!action || row.acao === action)
+          && (!action || row.dashboard_acao === action)
           && (!quality || row.qualidade === quality)
           && (!uf || row.uf === uf)
           && (!priority || String(row.prioridade_config) === priority);
       }).sort((a,b) => {
-        const ar = a.acao === 'ok' ? 999 : 0;
-        const br = b.acao === 'ok' ? 999 : 0;
-        return ar - br || Number(a.score || 0) - Number(b.score || 0) || text(a.sigla).localeCompare(text(b.sigla));
+        return priorityRank(a) - priorityRank(b) || Number(a.score || 0) - Number(b.score || 0) || text(a.sigla).localeCompare(text(b.sigla));
       });
       renderTable(filteredRows);
     }
@@ -1001,10 +1157,10 @@
             <td><strong>${escapeHtml(row.sigla)}</strong><br><span style="color:var(--muted)">${escapeHtml(row.nome)} · ${escapeHtml(row.uf || 'BR')}</span></td>
             <td><span class="score ${scoreClass(row.score)}">${escapeHtml(row.score)}</span></td>
             <td><span class="badge ${qualityClass(row.qualidade)}">${escapeHtml(row.qualidade)}</span></td>
-            <td><span class="badge ${actionClass(row.acao)}">${escapeHtml(actionLabel(row.acao))}</span><br><span style="color:var(--muted);font-size:.82rem">operacional: ${escapeHtml(row.prioridade_operacional || '—')}</span></td>
-            <td>${safeArray(row.motivos).slice(0,3).map(m => `<div>• ${escapeHtml(m)}</div>`).join('') || '—'}</td>
+            <td><span class="badge ${actionClass(row.dashboard_acao)}">${escapeHtml(actionLabel(row.dashboard_acao))}</span><br><span style="color:var(--muted);font-size:.82rem">relatório bruto: ${escapeHtml(actionLabel(row.acao))}</span></td>
+            <td><div><strong>Diagnóstico:</strong> ${escapeHtml(row.dashboard_motivo)}</div>${safeArray(row.motivos).slice(0,2).map(m => `<div>• ${escapeHtml(m)}</div>`).join('')}</td>
             <td>${problems.map(p => `<div>${escapeHtml(p)}</div>`).join('') || '<span style="color:var(--muted)">Sem problemas principais</span>'}</td>
-            <td>${row.workflow_sugerido ? `<button class="button small gold" onclick='copyText(${JSON.stringify(wf)})'>Copiar</button>` : '<span style="color:var(--muted)">—</span>'}</td>
+            <td>${row.dashboard_workflow_sugerido ? `<button class="button small gold" onclick='copyText(${JSON.stringify(wf)})'>Copiar</button>` : '<span style="color:var(--muted)">—</span>'}</td>
           </tr>
         `;
       }).join('');
@@ -1082,17 +1238,16 @@
     });
 
     document.getElementById('copyTopActions').addEventListener('click', () => {
-      const rows = currentRows.filter(r => r.acao !== 'ok').sort((a,b) => priorityRank(a)-priorityRank(b)).slice(0,8);
-      const text = rows.map((r,i) => `${i+1}. ${r.sigla} (${r.id}) — ${actionLabel(r.acao)} — score ${r.score}\n${workflowText(r)}`).join('\n\n');
+      const rows = currentRows.filter(r => r.dashboard_acao !== 'ok_editorial' && r.dashboard_acao !== 'ok').sort((a,b) => priorityRank(a)-priorityRank(b)).slice(0,8);
+      const text = rows.map((r,i) => `${i+1}. ${r.sigla} (${r.id}) — ${actionLabel(r.dashboard_acao)} — score ${r.score}\n${workflowText(r)}`).join('\n\n');
       copyText(text || 'Sem ações pendentes.');
     });
 
     document.getElementById('copyFiltered').addEventListener('click', () => {
-      const text = filteredRows.map(r => `${r.sigla} (${r.id}) — ${actionLabel(r.acao)} — score ${r.score}`).join('\n');
+      const text = filteredRows.map(r => `${r.sigla} (${r.id}) — ${actionLabel(r.dashboard_acao)} — score ${r.score}`).join('\n');
       copyText(text || 'Nenhuma instituição filtrada.');
     });
 
-    loadDefaultReport();
   </script>
 </body>
 </html>
