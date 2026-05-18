@@ -6,6 +6,7 @@ Este patch transforma o dashboard de qualidade em uma central geral para todas a
 
 - Concursos
 - Remuneração
+- Associações e sindicatos
 
 ## Arquivos principais
 
@@ -15,9 +16,11 @@ dashboard-qualidade/index.html
 dashboard-geral.html
 dashboard-concursos.html
 dashboard-remuneracao.html
+dashboard-associacoes-sindicatos.html
 data/areas.json
 data/concursos/_relatorio-qualidade.json
 data/remuneracao/_relatorio-qualidade.json
+data/associacoes/_relatorio-qualidade.json
 ```
 
 ## Como funciona
@@ -66,6 +69,9 @@ Exemplo:
 /dashboard-qualidade.html
 /dashboard-qualidade/?area=concursos
 /dashboard-qualidade/?area=remuneracao
+/dashboard-qualidade/?area=associacoes-sindicatos
 /dashboard-concursos.html
 /dashboard-remuneracao.html
+/dashboard-associacoes-sindicatos.html
+/dashboard-associacoes-sindicatos/
 ```

@@ -37,6 +37,7 @@
         <button class="pill active" data-jump="geral">Geral</button>
         <button class="pill" data-area-shortcut="concursos">Concursos</button>
         <button class="pill" data-area-shortcut="remuneracao">Remuneração</button>
+        <button class="pill" data-area-shortcut="associacoes-sindicatos">Associações e sindicatos</button>
         <button class="pill gold" id="btnReload">Recarregar</button>
       </nav>
     </div>
@@ -48,7 +49,7 @@
       <div class="hero-card">
         <div>
           <h1>Veja onde trabalhar primeiro nas atualizações.</h1>
-          <p>Este painel reúne os relatórios de qualidade das áreas do site. Hoje ele acompanha <strong>Concursos</strong> e <strong>Remuneração</strong>; no futuro, basta adicionar novas áreas em <code>data/areas.json</code>.</p>
+          <p>Este painel reúne os relatórios de qualidade das áreas do site. Hoje ele acompanha <strong>Concursos</strong>, <strong>Remuneração</strong> e <strong>Associações e sindicatos</strong>; novas áreas entram pelo <code>data/areas.json</code>.</p>
           <div class="actions-row">
             <button class="btn gold" data-action-filter="fracas">Ver fracas</button>
             <button class="btn" data-action-filter="pendentes">Ver pendentes</button>
@@ -82,7 +83,7 @@
     <section class="section-grid">
       <div class="panel">
         <h2>Resumo por área</h2>
-        <p class="muted">Use este bloco para decidir se você trabalha primeiro em concursos, remuneração ou outra área futura.</p>
+        <p class="muted">Use este bloco para decidir se você trabalha primeiro em concursos, remuneração, associações e sindicatos ou outra área futura.</p>
         <div id="areasSummary"></div>
       </div>
       <div class="panel">
@@ -129,7 +130,8 @@
 (function(){
   const DEFAULT_AREAS = [
     { id:'concursos', nome:'Concursos', descricao:'Qualidade das páginas de concursos.', relatorio:'data/concursos/_relatorio-qualidade.json', workflow:'Atualizar Concursos - Simples', pagina_site:'../concursos.html', modelo_padrao_pendentes:'gpt-5.4-mini', modelo_padrao_fracas:'gpt-5.4', modelo_padrao_dificil:'gpt-5.5' },
-    { id:'remuneracao', nome:'Remuneração', descricao:'Qualidade das tabelas de remuneração.', relatorio:'data/remuneracao/_relatorio-qualidade.json', workflow:'Atualizar Remuneração - Simples', pagina_site:'../remuneracao.html', modelo_padrao_pendentes:'gpt-5.4-mini', modelo_padrao_fracas:'gpt-5.4', modelo_padrao_dificil:'gpt-5.5' }
+    { id:'remuneracao', nome:'Remuneração', descricao:'Qualidade das tabelas de remuneração.', relatorio:'data/remuneracao/_relatorio-qualidade.json', workflow:'Atualizar Remuneração - Simples', pagina_site:'../remuneracao.html', modelo_padrao_pendentes:'gpt-5.4-mini', modelo_padrao_fracas:'gpt-5.4', modelo_padrao_dificil:'gpt-5.5' },
+    { id:'associacoes-sindicatos', nome:'Associações e sindicatos', descricao:'Qualidade das informações sobre associações, sindicatos e entidades representativas.', relatorio:'data/associacoes/_relatorio-qualidade.json', workflow:'Atualizar Associações e Sindicatos', pagina_site:'../associacoes-sindicatos.html', modelo_padrao_pendentes:'gpt-5.4-mini', modelo_padrao_fracas:'gpt-5.4', modelo_padrao_dificil:'gpt-5.5' }
   ];
   const state = { areas: [], reports: {}, items: [], selectedArea: 'geral', filters: { search:'', area:'todas', classe:'todas', uf:'todas', sort:'prioridade' } };
   const $ = (id) => document.getElementById(id);
@@ -180,6 +182,7 @@
 
   function inferAreaFromPath(){
     const p = location.pathname.toLowerCase();
+    if(p.includes('associacoes-sindicatos') || p.includes('associacoes')) return 'associacoes-sindicatos';
     if(p.includes('remuneracao')) return 'remuneracao';
     if(p.includes('concursos')) return 'concursos';
     return null;
@@ -188,7 +191,9 @@
   function normalizeReport(area, report){
     const rows = [];
     if(report && Array.isArray(report.fila_acoes)) rows.push(...report.fila_acoes);
-    else if(report && report.grupos && typeof report.grupos === 'object') Object.values(report.grupos).forEach(arr => Array.isArray(arr) && rows.push(...arr));
+    if(report && Array.isArray(report.itens)) rows.push(...report.itens);
+    if(report && Array.isArray(report.instituicoes)) rows.push(...report.instituicoes);
+    if(report && report.grupos && typeof report.grupos === 'object') Object.values(report.grupos).forEach(arr => Array.isArray(arr) && rows.push(...arr));
     const seen = new Set();
     return rows.map((raw, idx) => {
       const id = String(raw.id || raw.instituicao_id || raw.sigla || ('item_' + idx)).toLowerCase();
@@ -246,6 +251,11 @@
         if(Number(raw.linhas_com_valor || 0) < 3) motivos.push('poucas linhas com valor em reais');
         if(Number(raw.linhas_genericas || 0) > 0) motivos.push('existem linhas genéricas');
       }
+      if(area.id === 'associacoes-sindicatos'){
+        if(Number(raw.entidades || raw.associacoes || 0) < 1) motivos.push('nenhuma associação ou sindicato confirmado');
+        if(Number(raw.fontes || 0) < 1) motivos.push('sem fonte verificável');
+        if(raw.precisa_revisao_humana) motivos.push('precisa revisão humana');
+      }
     }
     if(classe === 'fortes' && !motivos.length) motivos.push('conteúdo suficiente para manutenção');
     return [...new Set(motivos.filter(Boolean))].slice(0, 6);
@@ -253,6 +263,7 @@
 
   function detailText(raw, area, classe){
     if(area.id === 'remuneracao') return `linhas com valor: ${raw.linhas_com_valor ?? 0}; fontes: ${raw.fontes ?? 0}; genéricas: ${raw.linhas_genericas ?? 0}`;
+    if(area.id === 'associacoes-sindicatos') return `entidades: ${raw.entidades ?? raw.associacoes ?? 0}; fontes: ${raw.fontes ?? 0}; revisão humana: ${raw.precisa_revisao_humana ? 'sim' : 'não'}`;
     const cg = raw.campos_genericos?.length || 0, cr = raw.campos_ruins?.length || 0, cc = raw.campos_concretos?.length || 0;
     return `concretos: ${cc}; genéricos: ${cg}; ruins: ${cr}`;
   }
@@ -305,6 +316,7 @@
     $('areaTabs').innerHTML = tabs.map(t => `<button class="tab ${state.selectedArea===t.id?'active':''}" data-tab="${esc(t.id)}">${esc(t.nome)}</button>`).join('');
     document.querySelectorAll('[data-tab]').forEach(btn => btn.onclick = () => { state.selectedArea = btn.dataset.tab; updateUrl(); render(); });
     document.querySelectorAll('[data-area-shortcut]').forEach(btn => btn.classList.toggle('active', state.selectedArea === btn.dataset.areaShortcut));
+    document.querySelectorAll('[data-jump="geral"]').forEach(btn => btn.classList.toggle('active', state.selectedArea === 'geral'));
   }
 
   function renderStatus(){
@@ -400,7 +412,7 @@
     const file = e.target.files && e.target.files[0]; if(!file) return;
     try{
       const json = JSON.parse(await file.text());
-      const areaId = state.selectedArea !== 'geral' ? state.selectedArea : prompt('Este JSON é de qual área? Ex.: concursos, remuneracao', 'concursos');
+      const areaId = state.selectedArea !== 'geral' ? state.selectedArea : prompt('Este JSON é de qual área? Ex.: concursos, remuneracao, associacoes-sindicatos', 'concursos');
       const area = state.areas.find(a => a.id === areaId) || {id:areaId,nome:areaId,workflow:'Atualizar '+areaId};
       state.reports[area.id]=json; state.items = state.items.filter(i => i.area_id !== area.id).concat(normalizeReport(area,json));
       buildFilters(); render(); addMsg('JSON manual carregado para ' + area.nome + '.');

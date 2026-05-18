@@ -21,6 +21,17 @@
       "modelo_padrao_pendentes": "gpt-5.4-mini",
       "modelo_padrao_fracas": "gpt-5.4",
       "modelo_padrao_dificil": "gpt-5.5"
+    },
+    {
+      "id": "associacoes-sindicatos",
+      "nome": "Associações e sindicatos",
+      "descricao": "Qualidade das informações sobre associações, sindicatos, entidades representativas, contatos, atuação e fontes.",
+      "relatorio": "data/associacoes/_relatorio-qualidade.json",
+      "workflow": "Atualizar Associações e Sindicatos",
+      "pagina_site": "../associacoes-sindicatos.html",
+      "modelo_padrao_pendentes": "gpt-5.4-mini",
+      "modelo_padrao_fracas": "gpt-5.4",
+      "modelo_padrao_dificil": "gpt-5.5"
     }
   ]
 }
