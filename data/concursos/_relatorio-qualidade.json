@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 40,
-    "fortes": 68
+    "fracas": 38,
+    "fortes": 70
   },
   "grupos": {
     "pendentes": [
@@ -103,103 +103,6 @@
           "edital",
           "salario",
           "idade",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppto",
-        "sigla": "PPTO",
-        "nome": "Polícia Penal de Tocantins",
-        "uf": "TO",
-        "score": 56,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "idade",
-          "inscritos",
-          "estagio",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "escolaridade"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprj",
-        "sigla": "PPRJ",
-        "nome": "Polícia Penal do Rio de Janeiro",
-        "uf": "RJ",
-        "score": 60,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "cotas",
-          "idade",
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "cfsd",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmma",
-        "sigla": "BMMA",
-        "nome": "Corpo de Bombeiros Militar do Maranhão",
-        "uf": "MA",
-        "score": 62,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: salario"
-        ],
-        "campos_ruins": [
-          "salario",
-          "inscritos",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "cotas",
-          "escolaridade",
-          "etapas",
           "previsao"
         ],
         "workflow_sugerido": {
@@ -1229,6 +1132,37 @@
         }
       },
       {
+        "id": "ppto",
+        "sigla": "PPTO",
+        "nome": "Polícia Penal de Tocantins",
+        "uf": "TO",
+        "score": 76,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio",
+          "previsao"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pmsc",
         "sigla": "PMSC",
         "nome": "Polícia Militar de Santa Catarina",
@@ -1490,6 +1424,38 @@
           "escolaridade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "bmma",
+        "sigla": "BMMA",
+        "nome": "Corpo de Bombeiros Militar do Maranhão",
+        "uf": "MA",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "etapas",
+          "cfsd",
+          "estagio",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -1910,6 +1876,39 @@
           "idade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprj",
+        "sigla": "PPRJ",
+        "nome": "Polícia Penal do Rio de Janeiro",
+        "uf": "RJ",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -3576,103 +3575,6 @@
       }
     },
     {
-      "id": "ppto",
-      "sigla": "PPTO",
-      "nome": "Polícia Penal de Tocantins",
-      "uf": "TO",
-      "score": 56,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "idade",
-        "inscritos",
-        "estagio",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "escolaridade"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprj",
-      "sigla": "PPRJ",
-      "nome": "Polícia Penal do Rio de Janeiro",
-      "uf": "RJ",
-      "score": 60,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "cotas",
-        "idade",
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "cfsd",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmma",
-      "sigla": "BMMA",
-      "nome": "Corpo de Bombeiros Militar do Maranhão",
-      "uf": "MA",
-      "score": 62,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: salario"
-      ],
-      "campos_ruins": [
-        "salario",
-        "inscritos",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "cotas",
-        "escolaridade",
-        "etapas",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "bmro",
       "sigla": "BMRO",
       "nome": "Corpo de Bombeiros Militar de Rondônia",
@@ -4730,6 +4632,37 @@
       }
     },
     {
+      "id": "ppto",
+      "sigla": "PPTO",
+      "nome": "Polícia Penal de Tocantins",
+      "uf": "TO",
+      "score": 76,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio",
+        "previsao"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
       "id": "bmpb",
       "sigla": "BMPB",
       "nome": "Corpo de Bombeiros Militar da Paraíba",
@@ -4925,6 +4858,38 @@
         "escolaridade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "bmma",
+      "sigla": "BMMA",
+      "nome": "Corpo de Bombeiros Militar do Maranhão",
+      "uf": "MA",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "etapas",
+        "cfsd",
+        "estagio",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",
@@ -5345,6 +5310,39 @@
         "idade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprj",
+      "sigla": "PPRJ",
+      "nome": "Polícia Penal do Rio de Janeiro",
+      "uf": "RJ",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",
