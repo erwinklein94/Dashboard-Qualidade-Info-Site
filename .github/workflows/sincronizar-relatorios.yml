@@ -1,0 +1,62 @@
+name: Sincronizar relatórios do site principal
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Roda a cada 1 hora
+    - cron: "0 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar dashboard
+        uses: actions/checkout@v4
+        with:
+          path: dashboard
+
+      - name: Baixar site principal
+        uses: actions/checkout@v4
+        with:
+          repository: erwinklein94/UniSegPub-Teste
+          ref: main
+          path: site-principal
+
+      - name: Copiar relatórios
+        run: |
+          mkdir -p dashboard/data/concursos
+          mkdir -p dashboard/data/remuneracao
+
+          if [ -f "site-principal/data/concursos/_relatorio-qualidade.json" ]; then
+            cp "site-principal/data/concursos/_relatorio-qualidade.json" "dashboard/data/concursos/_relatorio-qualidade.json"
+            echo "Relatório de concursos copiado."
+          else
+            echo "Relatório de concursos não encontrado no site principal."
+          fi
+
+          if [ -f "site-principal/data/remuneracao/_relatorio-qualidade.json" ]; then
+            cp "site-principal/data/remuneracao/_relatorio-qualidade.json" "dashboard/data/remuneracao/_relatorio-qualidade.json"
+            echo "Relatório de remuneração copiado."
+          else
+            echo "Relatório de remuneração não encontrado no site principal."
+          fi
+
+      - name: Commitar relatórios atualizados
+        run: |
+          cd dashboard
+
+          if [ -z "$(git status --porcelain data)" ]; then
+            echo "Nenhuma alteração nos relatórios."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/concursos/_relatorio-qualidade.json data/remuneracao/_relatorio-qualidade.json
+          git commit -m "Sincroniza relatórios do site principal"
+          git push
