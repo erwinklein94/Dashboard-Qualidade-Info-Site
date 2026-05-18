@@ -1,0 +1,26 @@
+{
+  "areas": [
+    {
+      "id": "concursos",
+      "nome": "Concursos",
+      "descricao": "Qualidade das páginas de concursos, editais, vagas, requisitos e etapas.",
+      "relatorio": "data/concursos/_relatorio-qualidade.json",
+      "workflow": "Atualizar Concursos - Simples",
+      "pagina_site": "../concursos.html",
+      "modelo_padrao_pendentes": "gpt-5.4-mini",
+      "modelo_padrao_fracas": "gpt-5.4",
+      "modelo_padrao_dificil": "gpt-5.5"
+    },
+    {
+      "id": "remuneracao",
+      "nome": "Remuneração",
+      "descricao": "Qualidade das tabelas de remuneração, cargos, valores, benefícios e fontes.",
+      "relatorio": "data/remuneracao/_relatorio-qualidade.json",
+      "workflow": "Atualizar Remuneração - Simples",
+      "pagina_site": "../remuneracao.html",
+      "modelo_padrao_pendentes": "gpt-5.4-mini",
+      "modelo_padrao_fracas": "gpt-5.4",
+      "modelo_padrao_dificil": "gpt-5.5"
+    }
+  ]
+}
